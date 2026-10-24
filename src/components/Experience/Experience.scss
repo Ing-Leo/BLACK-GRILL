@@ -1,0 +1,190 @@
+@use '../../styles/variables' as vars;
+
+// ==========================================
+// INICIO: SECCIÓN DE EXPERIENCIA
+// ==========================================
+.experience {
+  width: 100%;
+  padding: 6rem 7%;
+
+  background-color: vars.$color-surface;
+
+  // ==========================================
+  // INICIO: CONTENIDO PRINCIPAL
+  // ==========================================
+  &__content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  // FIN: CONTENIDO PRINCIPAL
+
+  // ==========================================
+  // INICIO: TEXTO SUPERIOR
+  // ==========================================
+  &__eyebrow {
+    margin-bottom: 1rem;
+
+    color: vars.$color-fire;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+  }
+  // FIN: TEXTO SUPERIOR
+
+  // ==========================================
+  // INICIO: TÍTULO
+  // ==========================================
+  &__title {
+    max-width: 800px;
+    margin: 0;
+
+    color: vars.$color-text;
+
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+
+    span {
+      color: vars.$color-fire;
+    }
+  }
+  // FIN: TÍTULO
+
+  // ==========================================
+  // INICIO: DESCRIPCIÓN
+  // ==========================================
+  &__description {
+    max-width: 750px;
+    margin: 1.5rem 0 3rem;
+
+    color: vars.$color-text-muted;
+
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+  // FIN: DESCRIPCIÓN
+
+  // ==========================================
+  // INICIO: CUADRÍCULA DE CARACTERÍSTICAS
+  // ==========================================
+  &__features {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+  }
+  // FIN: CUADRÍCULA DE CARACTERÍSTICAS
+
+  // ==========================================
+  // INICIO: TARJETA DE CARACTERÍSTICA
+  // ==========================================
+  &__feature {
+    min-width: 0;
+    padding: 1.75rem;
+
+    background-color: vars.$color-background;
+
+    border: 1px solid rgb(255 255 255 / 8%);
+    border-radius: 0.75rem;
+
+    transition:
+      transform vars.$transition-normal,
+      border-color vars.$transition-normal;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: vars.$color-ember;
+    }
+
+    h3 {
+      margin: 1rem 0 0.75rem;
+
+      color: vars.$color-text;
+
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0;
+
+      color: vars.$color-text-muted;
+
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+  }
+  // FIN: TARJETA DE CARACTERÍSTICA
+
+  // ==========================================
+  // INICIO: ICONO
+  // ==========================================
+  &__icon {
+    display: inline-block;
+
+    font-size: 2rem;
+  }
+  // FIN: ICONO
+}
+// FIN: SECCIÓN DE EXPERIENCIA
+
+// ==========================================
+// INICIO: ADAPTACIÓN PARA TABLETAS
+// ==========================================
+@media (min-width: 651px) and (max-width: 1023px) {
+  .experience {
+    padding: 5rem 5%;
+
+    &__features {
+      gap: 1rem;
+    }
+
+    &__feature {
+      padding: 1.25rem;
+    }
+  }
+}
+// FIN: ADAPTACIÓN PARA TABLETAS
+
+// ==========================================
+// INICIO: ADAPTACIÓN PARA CELULARES
+// ==========================================
+@media (max-width: 650px) {
+  .experience {
+    padding: 4rem 6%;
+
+    &__description {
+      margin-bottom: 2rem;
+    }
+
+    &__features {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    &__feature {
+      padding: 1.25rem;
+    }
+  }
+}
+// FIN: ADAPTACIÓN PARA CELULARES
+
+// ==========================================
+// INICIO: ACCESIBILIDAD
+// ==========================================
+@media (prefers-reduced-motion: reduce) {
+  .experience {
+    &__feature {
+      transition: none;
+    }
+
+    &__feature:hover {
+      transform: none;
+    }
+  }
+}
+// FIN: ACCESIBILIDAD

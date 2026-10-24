@@ -1,0 +1,207 @@
+@use '../../styles/variables' as vars;
+
+// ==========================================
+// INICIO: SECCIÓN DE CONTACTO
+// ==========================================
+.contact {
+  width: 100%;
+  padding: 6rem 7%;
+
+  background-color: vars.$color-background;
+
+  // ==========================================
+  // INICIO: ENCABEZADO
+  // ==========================================
+  &__header {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+
+    text-align: center;
+  }
+  // FIN: ENCABEZADO
+
+  // ==========================================
+  // INICIO: TEXTO SUPERIOR
+  // ==========================================
+  &__eyebrow {
+    margin-bottom: 1rem;
+
+    color: vars.$color-fire;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+  }
+  // FIN: TEXTO SUPERIOR
+
+  // ==========================================
+  // INICIO: TÍTULO
+  // ==========================================
+  &__title {
+    margin: 0;
+
+    color: vars.$color-text;
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+  // FIN: TÍTULO
+
+  // ==========================================
+  // INICIO: DESCRIPCIÓN
+  // ==========================================
+  &__description {
+    max-width: 600px;
+    margin: 1.25rem auto 0;
+
+    color: vars.$color-text-muted;
+
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  // FIN: DESCRIPCIÓN
+
+  // ==========================================
+  // INICIO: CUADRÍCULA
+  // ==========================================
+  &__grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  // FIN: CUADRÍCULA
+
+  // ==========================================
+  // INICIO: TARJETAS
+  // ==========================================
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 0;
+    padding: 2rem 1.5rem;
+
+    text-align: center;
+
+    background-color: vars.$color-surface;
+
+    border: 1px solid rgb(255 255 255 / 8%);
+    border-radius: 0.75rem;
+
+    transition:
+      transform vars.$transition-normal,
+      border-color vars.$transition-normal;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: vars.$color-ember;
+    }
+
+    h3 {
+      margin: 1rem 0 0.75rem;
+
+      color: vars.$color-text;
+
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0;
+
+      color: vars.$color-text-muted;
+
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+  }
+  // FIN: TARJETAS
+
+  // ==========================================
+  // INICIO: ICONOS
+  // ==========================================
+  &__icon {
+    font-size: 2rem;
+  }
+  // FIN: ICONOS
+
+  // ==========================================
+  // INICIO: NOTAS PROVISIONALES
+  // ==========================================
+  &__note {
+    margin-top: 1rem;
+
+    color: vars.$color-fire;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  // FIN: NOTAS PROVISIONALES
+}
+// FIN: SECCIÓN DE CONTACTO
+
+// ==========================================
+// INICIO: ADAPTACIÓN PARA TABLETAS
+// ==========================================
+@media (min-width: 651px) and (max-width: 1023px) {
+  .contact {
+    padding: 5rem 5%;
+
+    &__grid {
+      gap: 1rem;
+    }
+
+    &__card {
+      padding: 1.5rem 1rem;
+    }
+  }
+}
+// FIN: ADAPTACIÓN PARA TABLETAS
+
+// ==========================================
+// INICIO: ADAPTACIÓN PARA CELULARES
+// ==========================================
+@media (max-width: 650px) {
+  .contact {
+    padding: 4rem 6%;
+
+    &__header {
+      margin-bottom: 2rem;
+    }
+
+    &__grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    &__card {
+      padding: 1.5rem;
+    }
+  }
+}
+// FIN: ADAPTACIÓN PARA CELULARES
+
+// ==========================================
+// INICIO: ACCESIBILIDAD
+// ==========================================
+@media (prefers-reduced-motion: reduce) {
+  .contact {
+    &__card {
+      transition: none;
+    }
+
+    &__card:hover {
+      transform: none;
+    }
+  }
+}
+// FIN: ACCESIBILIDAD

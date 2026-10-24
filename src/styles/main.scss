@@ -1,0 +1,22 @@
+//Estilo Globales
+@use './variables' as vars;
+@use './reset';
+
+body{
+    background-color: vars.$color-background;
+    color: vars.$color-text;
+    font-family: vars.$font-primary;
+}
+
+// ==========================================
+// CONTENIDO GENERAL DE LA PÁGINA
+// ==========================================
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+}

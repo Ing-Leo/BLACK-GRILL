@@ -1,0 +1,339 @@
+
+// ==========================================
+// BLACK GRILL
+// Archivo: src/components/Header/Header.scss
+// Descripción: Encabezado responsivo
+// ==========================================
+
+@use '../../styles/variables' as vars;
+
+// ------------------------------------------
+// 1. CONTENEDOR PRINCIPAL
+// ------------------------------------------
+
+.header {
+  position: relative;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+  width: 100%;
+  padding: 1.25rem 5%;
+
+  background-color: vars.$color-background;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+
+  // ----------------------------------------
+  // 2. LOGOTIPO
+  // ----------------------------------------
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+
+    color: vars.$color-text;
+    text-decoration: none;
+    white-space: nowrap;
+
+    flex-shrink: 0;
+  }
+
+  &__brand-icon {
+    font-size: 1.7rem;
+    line-height: 1;
+  }
+
+  &__brand-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  // ----------------------------------------
+  // 3. BOTÓN DEL MENÚ MÓVIL
+  // ----------------------------------------
+
+  &__toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+    padding: 0;
+
+    color: vars.$color-text;
+    background-color: transparent;
+
+    border: 1px solid rgb(255 255 255 / 18%);
+    border-radius: 0.4rem;
+
+    font-size: 1.6rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+      color vars.$transition-normal,
+      background-color vars.$transition-normal,
+      border-color vars.$transition-normal;
+
+    &:hover {
+      color: vars.$color-fire;
+      border-color: vars.$color-ember;
+    }
+
+    &:focus-visible {
+      outline: 2px solid vars.$color-fire;
+      outline-offset: 3px;
+    }
+  }
+
+  // ----------------------------------------
+  // 4. CONTENEDOR DE NAVEGACIÓN
+  // ----------------------------------------
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 2rem;
+    min-width: 0;
+  }
+
+  // ----------------------------------------
+  // 5. LISTA DE ENLACES
+  // ----------------------------------------
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    gap: 2rem;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    a {
+      display: inline-block;
+
+      color: vars.$color-text-muted;
+      text-decoration: none;
+
+      transition:
+        color vars.$transition-normal;
+
+      &:hover {
+        color: vars.$color-fire;
+      }
+
+      &:focus-visible {
+        color: vars.$color-fire;
+        outline: 2px solid vars.$color-fire;
+        outline-offset: 4px;
+      }
+    }
+  }
+
+  // ----------------------------------------
+  // 6. BOTÓN VER MENÚ
+  // ----------------------------------------
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.75rem 1.25rem;
+
+    color: vars.$color-text;
+    background-color: vars.$color-ember;
+
+    border-radius: 0.4rem;
+
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+
+    flex-shrink: 0;
+
+    transition:
+      background-color vars.$transition-normal,
+      transform vars.$transition-normal;
+
+    &:hover {
+      background-color: vars.$color-fire;
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid vars.$color-fire;
+      outline-offset: 3px;
+    }
+  }
+}
+
+// ------------------------------------------
+// 7. DISEÑO RESPONSIVO: TABLETAS
+// ------------------------------------------
+
+@media (max-width: 950px) and (min-width: 651px) {
+  .header {
+    gap: 1rem;
+    padding: 1.1rem 3%;
+
+    &__brand {
+      gap: 0.4rem;
+    }
+
+    &__brand-name {
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+    }
+
+    &__navigation {
+      gap: 1rem;
+    }
+
+    &__list {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    &__button {
+      padding: 0.65rem 0.85rem;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// ------------------------------------------
+// 8. DISEÑO RESPONSIVO: CELULARES
+// ------------------------------------------
+
+@media (max-width: 650px) {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+    gap: 0;
+
+    padding: 0.85rem 5%;
+
+    // --------------------------------------
+    // 8.1 LOGOTIPO MÓVIL
+    // --------------------------------------
+
+    &__brand {
+      gap: 0.45rem;
+    }
+
+    &__brand-icon {
+      font-size: 1.5rem;
+    }
+
+    &__brand-name {
+      font-size: 1.05rem;
+      letter-spacing: 0.06em;
+    }
+
+    // --------------------------------------
+    // 8.2 BOTÓN HAMBURGUESA VISIBLE
+    // --------------------------------------
+
+    &__toggle {
+      display: inline-flex;
+      flex-shrink: 0;
+    }
+
+    // --------------------------------------
+    // 8.3 MENÚ DESPLEGABLE
+    // --------------------------------------
+
+    &__navigation {
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+
+      gap: 1rem;
+
+      width: 100%;
+      padding: 1rem 0 0;
+
+      // Se muestra cuando React agrega esta clase.
+
+      &--open {
+        display: flex;
+      }
+    }
+
+    // --------------------------------------
+    // 8.4 ENLACES VERTICALES
+    // --------------------------------------
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      gap: 0;
+
+      width: 100%;
+
+      li {
+        width: 100%;
+        border-bottom: 1px solid rgb(255 255 255 / 8%);
+      }
+
+      a {
+        display: block;
+        width: 100%;
+
+        padding: 0.9rem 0.25rem;
+
+        &:hover {
+          padding-left: 0.6rem;
+        }
+      }
+    }
+
+    // --------------------------------------
+    // 8.5 BOTÓN VER MENÚ MÓVIL
+    // --------------------------------------
+
+    &__button {
+      display: flex;
+      justify-content: center;
+
+      width: 100%;
+      padding: 0.85rem 1rem;
+    }
+  }
+}
+
+// ------------------------------------------
+// 9. RESPETO A MOVIMIENTO REDUCIDO
+// ------------------------------------------
+
+@media (prefers-reduced-motion: reduce) {
+  .header {
+    &__list a,
+    &__button,
+    &__toggle {
+      transition: none;
+    }
+
+    &__button:hover {
+      transform: none;
+    }
+  }
+}
+
