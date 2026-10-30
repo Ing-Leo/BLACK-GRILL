@@ -70,7 +70,7 @@ function Menu() {
         </h2>
 
         <p className="menu__description">
-          El auténtico sabor de la carne al carbón, acompañado de ingredientes frescos y deliciosas papas.
+          El auténtico sabor de la carne al carbón, acompañado de ingredientes frescos y deliciosas papas Inglesas.
           ¡Un sabor que conquista desde el primer bocado! 
         </p>
 
