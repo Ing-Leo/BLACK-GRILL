@@ -26,16 +26,16 @@ const hamburguesas: Hamburguesa[] = [
     nombre: 'Black Clásica',
     descripcion:
       'Carne preparada al carbón, pan con ajonjolí y un sabor auténtico.',
-    precio: 90,
+    precio: 95,
     imagen: '/img/2.jpeg',
     etiqueta: 'Nuestra especialidad',
   },
   {
     id: 2,
-    nombre: 'Black Especial',
+    nombre: 'Black Especial Hawaiana',
     descripcion:
-      'Una hamburguesa con doble carne, queso manchego,lechuga,  sabor intenso, preparada a la parrilla.',
-    precio: 120,
+      'Una hamburguesa con carne al carbon, queso manchego,piña,lechuga,tocino, sabor intenso, preparada a la parrilla.',
+    precio: 95,
     imagen: '/img/1.jpeg',
     etiqueta: 'Favorita',
   },
@@ -43,8 +43,8 @@ const hamburguesas: Hamburguesa[] = [
     id: 3,
     nombre: 'Black Grill',
     descripcion:
-      'Pan dorado, Doble carne al carbón, doble queso, lechuga y el sabor que distingue a BLACK GRILL.',
-    precio: 130,
+      'Pan dorado, Doble carne al carbón, queso, lechuga,tocino y el sabor que distingue a BLACK GRILL.',
+    precio: 145,
     imagen: '/img/3.jpeg',
   },
 ]
