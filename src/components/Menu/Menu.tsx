@@ -35,7 +35,7 @@ const hamburguesas: Hamburguesa[] = [
     nombre: 'Black Especial Hawaiana',
     descripcion:
       'Una hamburguesa con carne al carbon, queso manchego,piña,lechuga,tocino, sabor intenso, preparada a la parrilla.',
-    precio: 95,
+    precio: 120,
     imagen: '/img/1.jpeg',
     etiqueta: 'Favorita',
   },
