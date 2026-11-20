@@ -25,8 +25,8 @@ const hamburguesas: Hamburguesa[] = [
     id: 1,
     nombre: 'Black Clásica',
     descripcion:
-      'Carne preparada al carbón, pan con ajonjolí y un sabor auténtico.',
-    precio: 95,
+      'Carne preparada al carbón, pan con ajonjolí, tocino y un sabor auténtico acompañadas de papas a la francesa. ',
+    precio: 120,
     imagen: '/img/2.jpeg',
     etiqueta: 'Nuestra especialidad',
   },
@@ -34,8 +34,8 @@ const hamburguesas: Hamburguesa[] = [
     id: 2,
     nombre: 'Black Especial Hawaiana',
     descripcion:
-      'Una hamburguesa con carne al carbon, queso manchego,piña,lechuga,tocino, sabor intenso, preparada a la parrilla.',
-    precio: 120,
+      'Una hamburguesa con carne al carbon, queso manchego, piña, lechuga, tocino, sabor intenso preparada a la parrilla y papas a la francesa.',
+    precio: 135,
     imagen: '/img/1.jpeg',
     etiqueta: 'Favorita',
   },
@@ -43,10 +43,34 @@ const hamburguesas: Hamburguesa[] = [
     id: 3,
     nombre: 'Black Grill',
     descripcion:
-      'Pan dorado, Doble carne al carbón, queso, lechuga,tocino y el sabor que distingue a BLACK GRILL.',
-    precio: 145,
+      'Pan dorado, Doble carne al carbón, queso, lechuga,tocino y el sabor que distingue a BLACK GRILL acompañadas con papas a la francesa.',
+    precio: 170,
     imagen: '/img/3.jpeg',
   },
+  {
+    id: 4,
+    nombre: 'Orden de Papas',
+    descripcion:
+    'Llevate una Orden de papas a la francesa.',
+    precio: 65,
+    imagen: '/img/4.jpg',
+  },
+  {
+    id: 5,
+    nombre: 'Alitas al Carbon',
+    descripcion:
+    '¿Te faltó algo mas a tu pedido?, ALITAS AL CARBON-PRÓXIMAMENTE.',
+    precio: 65,
+    imagen: '/img/5.jpg',
+  },
+  {
+    id: 6,
+    nombre: 'Bebidas Preparadas',
+    descripcion:
+    'Cierra con broche de oro pregunta por nuestras bebidas, desde Sangrias, Tehuacán, Limonada, etc..',
+    precio: 75,
+    imagen: '/img/6.jpg',
+  }
 ]
 // FIN: INFORMACIÓN DE LAS HAMBURGUESAS
 
@@ -70,7 +94,7 @@ function Menu() {
         </h2>
 
         <p className="menu__description">
-          El auténtico sabor de la carne al carbón, acompañado de ingredientes frescos y deliciosas papas Inglesas.
+          El auténtico sabor de la carne al carbón, acompañado de ingredientes frescos y deliciosas papas a la Francesa.
           ¡Un sabor que conquista desde el primer bocado! 
         </p>
 
